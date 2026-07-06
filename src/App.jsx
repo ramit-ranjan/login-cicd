@@ -15,7 +15,7 @@ function App() {
   return (
     <div style={styles.container}>
       <div style={styles.card}>
-        <h2>Login</h2>
+        <h2>Welcome Login Page</h2>
 
         <input
           type="email"

@@ -1,16 +1,138 @@
-# React + Vite
+# 🚀 React Login App CI/CD Pipeline
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React Login Page project built with **React + Vite** and deployed using a **CI/CD pipeline with GitHub Actions and GitHub Pages**.
 
-Currently, two official plugins are available:
+This project demonstrates how code changes are automatically built, tested, and deployed after every push to GitHub.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🔄 CI/CD Workflow
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. Code Development
+Developer makes changes in the React application using **VS Code**.
 
-## Expanding the ESLint configuration
+Example:
+- Update components
+- Modify UI
+- Add new features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+### 2. Git Version Control
+
+Changes are tracked and pushed using Git:
+
+```bash
+git add .
+git commit -m "update changes"
+git push
+```
+
+---
+
+### 3. GitHub Repository
+
+The updated code is pushed to the GitHub repository.
+
+After every push:
+
+```
+GitHub Repository
+        ↓
+GitHub Actions Triggered
+```
+
+---
+
+## ⚙️ GitHub Actions Pipeline
+
+Workflow file location:
+
+```
+.github/workflows/deploy.yml
+```
+
+GitHub Actions automatically starts the CI/CD process.
+
+---
+
+## 🔹 CI (Continuous Integration)
+
+CI automatically performs:
+
+✔ Checkout latest source code  
+✔ Setup Node.js environment  
+✔ Install project dependencies  
+
+```bash
+npm install
+```
+
+✔ Build production files
+
+```bash
+npm run build
+```
+
+✔ Verify successful build
+
+---
+
+## 🔹 CD (Continuous Deployment)
+
+After successful build:
+
+✔ Upload generated `dist` folder  
+✔ Deploy application using GitHub Pages  
+✔ Update live website automatically  
+
+---
+
+## 📌 Complete Flow
+
+```
+Developer
+    ↓
+Code Change
+    ↓
+Git Commit & Push
+    ↓
+GitHub Repository
+    ↓
+GitHub Actions
+    ↓
+CI: Install + Build
+    ↓
+CD: Deploy
+    ↓
+Live Website Updated
+```
+
+---
+
+## 🛠️ Tech Stack
+
+- React.js
+- Vite
+- Git
+- GitHub
+- GitHub Actions
+- GitHub Pages
+
+---
+
+## 🎯 Purpose
+
+The goal of this project is to understand and implement a real CI/CD workflow by automating:
+
+- Build process
+- Deployment process
+- Application updates
+
+After every code push, the application is automatically deployed without manual steps.
+
+---
+
+## ✨ Key Learning
+
+**Code → Push → Automation → Deployment → Live Update**
